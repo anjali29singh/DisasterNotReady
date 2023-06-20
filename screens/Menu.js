@@ -1,33 +1,8 @@
 import { StyleSheet, TouchableOpacity, View } from "react-native";
 import React, { useLayoutEffect } from "react";
-import { HeaderBackButton } from '@react-navigation/stack';
 import { Text } from "@rneui/base";
-import {
-    AntDesign,
-  } from "@expo/vector-icons";
 
 const Menu = ({ navigation }) => {
-    useLayoutEffect(() => {
-        navigation.setOptions({
-          headerRight: () => (
-            <View
-              style={{
-                flexDirection: "row",
-                justifyContent: "flex-end",
-                width: 80,
-                marginRight: 10,
-              }}
-            >
-              <TouchableOpacity
-                activeOpacity={0.5}
-              >
-                <AntDesign name="infocirlceo" size={25} color="black" />
-              </TouchableOpacity>
-            </View>
-          ),
-        });
-      }, [navigation]);
-
   return (
     <View
       style={{
@@ -36,7 +11,7 @@ const Menu = ({ navigation }) => {
       }}
     >
       <Text style={{ fontSize: 35, fontWeight: "bold", marginBottom: 30 }}>Disaster Ready</Text>
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity onPress={() => navigation.navigate("Home")} style={styles.button}>
         <Text
           style={{
             color: "black",
@@ -46,17 +21,17 @@ const Menu = ({ navigation }) => {
           Home
         </Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity onPress={() => navigation.navigate("Info")} style={styles.button}>
         <Text
           style={{
             color: "black",
             fontSize: 30,
           }}
         >
-          About
+          Info
         </Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity onPress={() => navigation.navigate("Settings")} style={styles.button}>
         <Text
           style={{
             color: "black",
@@ -66,7 +41,7 @@ const Menu = ({ navigation }) => {
           Settings
         </Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity onPress={() => navigation.navigate("Contact")} style={styles.button}>
         <Text
           style={{
             color: "black",
@@ -76,7 +51,7 @@ const Menu = ({ navigation }) => {
           Contact
         </Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity onPress={() => navigation.navigate("TAC")} style={styles.button}>
         <Text
           style={{
             color: "black",

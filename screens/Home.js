@@ -38,6 +38,7 @@ const Home = ({ navigation }) => {
           }}
         >
           <TouchableOpacity
+            onPress={() => navigation.navigate("Info")}
             activeOpacity={0.5}
           >
             <AntDesign name="infocirlceo" size={25} color="black" />
